@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "title": "News App",
+  "@title": {
+    "description": "Title of the application used in Material app."
+  },
+  "fallbackError": "Some rendering error occurred. Please report the issue.",
+  "@fallbackError": {
+    "description": "This text is displayed when some rendering error occurred which otherwise would have resulted in grey screen in release mode, and red screen in debug mode."
+  }
+}
