@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fetch_news_provider.dart';
+part of 'news_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fetchNewsHash() => r'759f6445c380398742934f72b625ff7be7dce574';
+String _$newsHash() => r'360fe011d19f806dbe29b002f5d8dd3586c3c284';
 
-/// See also [fetchNews].
-@ProviderFor(fetchNews)
-final fetchNewsProvider = FutureProvider<News>.internal(
-  fetchNews,
-  name: r'fetchNewsProvider',
+/// See also [News].
+@ProviderFor(News)
+final newsProvider = AsyncNotifierProvider<News, List<Results>?>.internal(
+  News.new,
+  name: r'newsProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$fetchNewsHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$newsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef FetchNewsRef = FutureProviderRef<News>;
+typedef _$News = AsyncNotifier<List<Results>?>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

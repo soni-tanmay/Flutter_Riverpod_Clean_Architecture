@@ -10,11 +10,15 @@ class FallbackError extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        context.l10n.fallbackError,
-        style: TextStyle(color: theme.colorScheme.error),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          context.l10n.fallbackError,
+          style: theme.textTheme.bodyLarge?.copyWith(
+            color: theme.colorScheme.error,
+          ),
+        ),
       ),
     );
   }

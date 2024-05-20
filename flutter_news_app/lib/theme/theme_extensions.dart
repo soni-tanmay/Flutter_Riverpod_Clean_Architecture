@@ -13,7 +13,11 @@
 //   final Gradient? borderGradient;
 
 //   @override
-//   MyColors copyWith({Color? backgroundGradient, Color? containerBgColor, Gradient? borderGradient}) {
+//   MyColors copyWith({
+//     Color? backgroundGradient,
+//     Color? containerBgColor,
+//     Gradient? borderGradient,
+//   }) {
 //     return MyColors(
 //       backgroundGradient: backgroundGradient ?? this.backgroundGradient,
 //       containerBgColor: containerBgColor ?? this.containerBgColor,
@@ -27,7 +31,8 @@
 //       return this;
 //     }
 //     return MyColors(
-//       backgroundGradient: Color.lerp(backgroundGradient, other.backgroundGradient, t),
+//       backgroundGradient:
+//           Color.lerp(backgroundGradient, other.backgroundGradient, t),
 //       containerBgColor: Color.lerp(containerBgColor, other.containerBgColor, t),
 //       borderGradient: Gradient.lerp(borderGradient, other.borderGradient, t),
 //     );

@@ -1,14 +1,17 @@
 import "package:flutter/material.dart";
+// import "package:flutter_news_app/assets/fonts.gen.dart";
+import "package:flutter_news_app/core/constants/theme_constants.dart";
+// import "package:flutter_news_app/theme/theme_extensions.dart";
 
 final _base = ThemeData(
-  brightness: Brightness.dark,
   useMaterial3: true,
   // fontFamily: FontFamily.montserrat,
+  colorSchemeSeed: kThemeSeedColor,
+  brightness: Brightness.dark,
   // colorScheme: ColorScheme.fromSeed(
   //   seedColor: kThemeSeedColor,
-  //   background: kThemeBackgroundColor,
+  //   brightness: Brightness.light,
   // ),
-  // scaffoldBackgroundColor: kThemeBackgroundColor,
   // extensions: const <ThemeExtension>[
   //   MyColors(
   //     backgroundGradient: kThemeBackgroundGradientColor,

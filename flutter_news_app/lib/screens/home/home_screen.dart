@@ -1,45 +1,53 @@
 import "package:flutter/material.dart";
-import "package:flutter_news_app/assets/assets.gen.dart";
-import "package:flutter_news_app/core/models/news/news.dart";
-import "package:flutter_news_app/core/providers/fetch_news/fetch_news_provider.dart";
+import "package:flutter_news_app/core/providers/news/news_provider.dart";
+import "package:flutter_news_app/router/app_router.dart";
+import "package:flutter_news_app/widgets/articles_list.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<News> newsRef = ref.watch(fetchNewsProvider);
-
-    // ref.refresh(fetchNewsProvider.future);
+    final newsRef = ref.watch(newsProvider);
+    final theme = Theme.of(context);
     return Scaffold(
-        body: DecoratedBox(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: Assets.images.union.image().image, fit: BoxFit.fill),
-      ),
-      child: newsRef.when(
-        data: (data) => Center(
-          child: Text(
-            data.status,
-            style: TextStyle(
-              fontSize: 64.sp,
-            ),
-            textAlign: TextAlign.center,
-          ),
+      appBar: AppBar(
+        title: Text(
+          "News",
+          style: theme.textTheme.headlineLarge,
         ),
-        error: (error, _) => Center(
-          child: Text(
+        actions: [
+          IconButton(
+            onPressed: () {
+              appRouter.pushNamed(ScreenPaths.savedNews.name);
+            },
+            icon: Icon(
+              Icons.bookmark_border_rounded,
+              size: 30.r,
+            ),
+          )
+        ],
+      ),
+      body: RefreshIndicator(
+        onRefresh: () => ref.refresh(newsProvider.future),
+        child: newsRef.when(
+          skipLoadingOnRefresh: false,
+          data: (value) => ArticlesList(
+            value: value,
+            savedNews: false,
+          ),
+          error: (error, _) => Text(
             error.toString(),
-            style: TextStyle(
-              fontSize: 64.sp,
+            style: theme.textTheme.bodyLarge?.copyWith(
+              color: theme.colorScheme.error,
             ),
-            textAlign: TextAlign.center,
+          ),
+          loading: () => const Center(
+            child: CircularProgressIndicator(),
           ),
         ),
-        loading: () => const Center(child: CircularProgressIndicator()),
       ),
-    ));
+    );
   }
 }

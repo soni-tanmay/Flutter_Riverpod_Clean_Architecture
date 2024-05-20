@@ -1,8 +1,8 @@
-// import "package:flutter/material.dart";
+import "package:flutter/material.dart";
 
-// const Color kThemeSeedColor = Color.fromRGBO(209, 55, 49, 1);
+const Color kThemeSeedColor = Colors.blue;
+// const Color kThemeTextColor = Colors.black;
 // const Color kThemeBackgroundColor = Color(0xFF171717);
-// const Color kThemeTextColor = Colors.white;
 // const Color kThemeBackgroundGradientColor = Colors.black;
 // const Color kThemeContainerBgColor = Color(0xFF161616);
 // const Gradient kThemeContainerGradient = LinearGradient(

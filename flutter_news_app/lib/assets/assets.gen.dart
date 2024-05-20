@@ -12,11 +12,17 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Union.png
-  AssetGenImage get union => const AssetGenImage('assets/images/Union.png');
+  /// File path: assets/images/AppIcon.png
+  AssetGenImage get appIcon => const AssetGenImage('assets/images/AppIcon.png');
+
+  /// File path: assets/images/BackgroundImage.png
+  AssetGenImage get backgroundImage => const AssetGenImage('assets/images/BackgroundImage.png');
+
+  /// File path: assets/images/placeholder.png
+  AssetGenImage get placeholder => const AssetGenImage('assets/images/placeholder.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [union];
+  List<AssetGenImage> get values => [appIcon, backgroundImage, placeholder];
 }
 
 class Assets {

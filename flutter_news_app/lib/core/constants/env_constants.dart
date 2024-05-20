@@ -1,4 +1,3 @@
-// If you change any values below, make sure to change them in all CORE apps.
-
-const String apiKey = "6c5abfceb081459b804924e7791aa978";
-const String country = "us";
+const String apiKey = "pub_44447da6e365816789d4ca6f928d566a37849";
+const String defaultLanguage = "en";
+const String defaultSearch = "headlines";

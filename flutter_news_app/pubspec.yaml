@@ -7,6 +7,8 @@ environment:
   sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
+  desktop_window: ^0.4.0
+  dio: ^5.4.3+1
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -19,7 +21,9 @@ dependencies:
   http: ^1.2.1
   intl: any
   json_annotation: ^4.8.1
+  path: ^1.9.0
   riverpod_annotation: ^2.3.5
+  sqflite: ^2.3.3+1
 
 dev_dependencies:
   build_runner: ^2.4.8
@@ -29,7 +33,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.4.7
-  # icons_launcher: ^2.1.7 # dart run icons_launcher:create
+  icons_launcher: ^2.1.7 # dart run icons_launcher:create
   json_serializable: ^6.7.1
   riverpod_generator: ^2.4.0
   riverpod_lint: ^2.3.10
@@ -40,18 +44,23 @@ flutter_gen:
   integrations:
     flutter_svg: true
 
-# icons_launcher:
-#   image_path: ""
-#   platforms:
-#     macos:
-#       enable: true
-#     windows:
-#       enable: true
-#     linux:
-#       enable: true
-#     web:
-#       enable: true
+icons_launcher:
+  image_path: "assets/images/AppIcon.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
+    macos:
+      enable: true
+    windows:
+      enable: true
+    linux:
+      enable: true
+    web:
+      enable: true
 
+# The following section is specific to Flutter.
 flutter:
   generate: true
   uses-material-design: true
@@ -59,4 +68,11 @@ flutter:
   assets:
     - assets/images/
 
-  # fonts:
+  fonts:
+    - family: Airstrike
+      fonts:
+        - asset: assets/fonts/air-strike/airstrike.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf

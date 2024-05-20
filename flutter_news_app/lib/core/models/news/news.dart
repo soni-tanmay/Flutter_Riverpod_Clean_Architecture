@@ -1,19 +1,56 @@
+import "package:flutter/foundation.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 
 part "news.freezed.dart";
 part "news.g.dart";
 
-/// The response of the `GET /api/activity` endpoint.
-///
-/// It is defined using `freezed` and `json_serializable`.
 @freezed
 class News with _$News {
-  factory News({
-    required String status,
-    required int totalResults,
+  const factory News({
+    String? status,
+    int? totalResults,
+    List<Results>? results,
+    String? nextPage,
   }) = _News;
 
-  /// Convert a JSON object into an [News] instance.
-  /// This enables type-safe reading of the API response.
-  factory News.fromJson(Map<String, dynamic> json) => _$NewsFromJson(json);
+  factory News.fromJson(Map<String, Object?> json) => _$NewsFromJson(json);
+}
+
+@freezed
+class Results with _$Results {
+  const factory Results({
+    String? articleId,
+    String? title,
+    String? link,
+    List<String>? keywords,
+    String? description,
+    String? content,
+    String? pubDate,
+    String? imageUrl,
+    String? sourceId,
+    int? sourcePriority,
+    String? sourceUrl,
+    String? sourceIcon,
+    String? language,
+    List<String>? country,
+    List<String>? category,
+    List<String>? aiRegion,
+    String? sentiment,
+    SentimentStats? sentimentStats,
+  }) = _Results;
+
+  factory Results.fromJson(Map<String, Object?> json) =>
+      _$ResultsFromJson(json);
+}
+
+@freezed
+class SentimentStats with _$SentimentStats {
+  const factory SentimentStats({
+    double? positive,
+    double? neutral,
+    double? negative,
+  }) = _SentimentStats;
+
+  factory SentimentStats.fromJson(Map<String, Object?> json) =>
+      _$SentimentStatsFromJson(json);
 }
