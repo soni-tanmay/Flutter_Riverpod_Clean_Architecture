@@ -16,21 +16,17 @@ final ApiRepository apiRepository = ApiRepository();
 
 @Riverpod(keepAlive: true)
 class News extends _$News {
-  List<Results>? newsList = [];
-
   @override
   Future<List<Results>?> build() async {
     return fetchNews();
   }
 
   Future<List<Results>?> fetchNews() async {
-    print("fetchNews");
     final response = await apiRepository.fetchNews();
     return response;
   }
 
   Future<void> fetchMoreNews() async {
-    print("fetchMoreNews");
     final response = await apiRepository.fetchMoreNews();
     state = AsyncData(response);
   }
@@ -48,7 +44,7 @@ class News extends _$News {
 // }
 
 // class NewsSuccess extends NewsState {
-//   final List<Articles> data;
+//   final List<Results> data;
 //   NewsSuccess({required this.data});
 // }
 

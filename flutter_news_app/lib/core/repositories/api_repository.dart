@@ -15,10 +15,8 @@ class ApiRepository {
       results = response.results;
       return response.results;
     } on DioException catch (e, s) {
-      print("$e, $s");
       throw ApiException.fromDioException(e, "Failed to fetch news");
     } catch (e, s) {
-      print("$e, $s");
       throw ApiException.unknown();
     }
   }
@@ -34,10 +32,8 @@ class ApiRepository {
         return results;
       }
     } on DioException catch (e, s) {
-      print("$e, $s");
       throw ApiException.fromDioException(e, "Failed to fetch news");
     } catch (e, s) {
-      print("$e, $s");
       throw ApiException.unknown();
     }
   }

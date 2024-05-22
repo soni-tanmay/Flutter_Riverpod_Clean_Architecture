@@ -42,8 +42,6 @@ class LocalDatabase {
   }
 
   Future<void> insert(Results article) async {
-    print("insert");
-    print(article.title?.length);
     final db = await instance.database;
 
     await db.insert("newsTable", {
